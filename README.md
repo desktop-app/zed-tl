@@ -80,4 +80,4 @@ After editing `grammar/grammar.js` or `languages/tl/highlights.scm`:
 
 ## License
 
-GPL-3.0-or-later.
+MIT.

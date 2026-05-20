@@ -13,7 +13,7 @@
     "telegram",
     "type-language"
   ],
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "devDependencies": {
     "tree-sitter-cli": "^0.25.0"
   },
