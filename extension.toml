@@ -8,5 +8,5 @@ repository = "https://github.com/desktop-app/zed-tl"
 
 [grammars.tl]
 repository = "https://github.com/desktop-app/zed-tl"
-commit = "0000000000000000000000000000000000000000"
+commit = "bbbdce8733ace86a5eab2ffa5f352980a1ea6004"
 path = "grammar"
