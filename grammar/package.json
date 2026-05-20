@@ -1,0 +1,27 @@
+{
+  "name": "tree-sitter-tl",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for Telegram Type Language (TL)",
+  "main": "bindings/node",
+  "scripts": {
+    "build": "tree-sitter generate",
+    "test": "tree-sitter test"
+  },
+  "keywords": [
+    "tree-sitter",
+    "tl",
+    "telegram",
+    "type-language"
+  ],
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.25.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.tl",
+      "file-types": ["tl"],
+      "injection-regex": "^tl$"
+    }
+  ]
+}

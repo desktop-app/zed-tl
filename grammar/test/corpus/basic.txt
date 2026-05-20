@@ -1,0 +1,173 @@
+==================
+Core type aliases
+==================
+
+int ? = Int;
+long ? = Long;
+
+---
+
+(source_file
+  (declaration
+    name: (qualified_name (identifier))
+    (wildcard_param)
+    result: (result_type (qualified_name (identifier))))
+  (declaration
+    name: (qualified_name (identifier))
+    (wildcard_param)
+    result: (result_type (qualified_name (identifier)))))
+
+==================
+Vector definition with type variable
+==================
+
+vector {t:Type} # [ t ] = Vector t;
+
+---
+
+(source_file
+  (declaration
+    name: (qualified_name (identifier))
+    (type_var_param
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    (bitmask_param)
+    (array_param
+      (type_expr (qualified_name (identifier))))
+    result: (result_type
+      (qualified_name (identifier))
+      (qualified_name (identifier)))))
+
+==================
+Constructor with hash id
+==================
+
+resPQ#05162463 nonce:int128 server_nonce:int128 pq:string = ResPQ;
+
+---
+
+(source_file
+  (declaration
+    name: (qualified_name (identifier))
+    id: (constructor_id)
+    (field
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    (field
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    (field
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    result: (result_type (qualified_name (identifier)))))
+
+==================
+Conditional flags field
+==================
+
+message#abcdef flags:# id:int from_id:flags.0?long text:flags.1?string = Message;
+
+---
+
+(source_file
+  (declaration
+    name: (qualified_name (identifier))
+    id: (constructor_id)
+    (field
+      name: (identifier)
+      type: (type_expr (bitmask_type)))
+    (field
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    (field
+      name: (identifier)
+      condition: (flags_ref)
+      type: (type_expr (qualified_name (identifier))))
+    (field
+      name: (identifier)
+      condition: (flags_ref)
+      type: (type_expr (qualified_name (identifier))))
+    result: (result_type (qualified_name (identifier)))))
+
+==================
+Generic result type with angle brackets
+==================
+
+future_salts#ae500895 req_msg_id:long now:int salts:vector<future_salt> = FutureSalts;
+
+---
+
+(source_file
+  (declaration
+    name: (qualified_name (identifier))
+    id: (constructor_id)
+    (field
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    (field
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    (field
+      name: (identifier)
+      type: (type_expr
+        (qualified_name (identifier))
+        (type_args
+          (type_expr (qualified_name (identifier))))))
+    result: (result_type (qualified_name (identifier)))))
+
+==================
+Section marker
+==================
+
+---functions---
+
+req_pq#60469778 nonce:int128 = ResPQ;
+
+---
+
+(source_file
+  (section_marker)
+  (declaration
+    name: (qualified_name (identifier))
+    id: (constructor_id)
+    (field
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    result: (result_type (qualified_name (identifier)))))
+
+==================
+Qualified namespace combinator
+==================
+
+help.configSimple#5a592a6c date:int = help.ConfigSimple;
+
+---
+
+(source_file
+  (declaration
+    name: (qualified_name (identifier) (identifier))
+    id: (constructor_id)
+    (field
+      name: (identifier)
+      type: (type_expr (qualified_name (identifier))))
+    result: (result_type
+      (qualified_name (identifier) (identifier)))))
+
+==================
+Comments
+==================
+
+// a line comment
+/* a block
+   comment */
+int ? = Int;
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  (declaration
+    name: (qualified_name (identifier))
+    (wildcard_param)
+    result: (result_type (qualified_name (identifier)))))
