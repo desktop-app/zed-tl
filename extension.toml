@@ -1,4 +1,4 @@
-id = "tl"
+id = "telegram-tl"
 name = "Telegram Type Language"
 description = "Syntax highlighting for Telegram's Type Language (TL) schemas."
 version = "0.1.0"
